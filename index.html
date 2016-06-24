@@ -1,0 +1,53 @@
+<html ng-app="normalNetherApp">
+	<head>
+		<title>Normal Nether Converter</title>
+		
+		<link href="include/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="include/js/lib/angular.min.js"></script>
+		<script type="text/javascript" src="include/js/normalnether.js"></script> 
+		
+		<!-- Favicon -->
+		<link rel="icon" href="include/image/nether.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="include/image/nether.ico" type="image/x-icon"/> 
+		
+	</head>
+	<body ng-controller="netherCtrl" ng-cloak> 
+	
+		 
+		<div class="container">	
+	
+			<h2>Normal/Nether Converter</h2>
+			<p>Please provide valid X and Z coordinates</p>
+			<br>
+			
+			<form role="form">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-2">
+							<label for="x_real">X Real</label>						
+							<input class="form-control" type="number" ng-model="x_real">
+						</div>
+						<div class="col-xs-2"> 
+							<label for="z_real">Z Real</label>						
+							<input class="form-control" type="number" ng-model="z_real">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-xs-2">
+							<label for="x_nether">X Nether</label>						
+							<input class="form-control" type="number" ng-model="x_nether">
+						</div>
+						<div class="col-xs-2"> 
+							<label for="z_nether">Z Nether</label>						
+							<input class="form-control" type="number" ng-model="z_nether">
+						</div>
+					</div>
+					<br>
+					<button class="btn btn-primary" ng-href='#here'  ng-show="(x_real && z_real) && !x_nether && !z_nether" ng-click="convertToNether(x_real, z_real)"> Convert to Nether </button>	
+					<button class="btn btn-primary" ng-href='#here'  ng-show="(x_nether && z_nether) && !x_real && !z_real" ng-click="convertToReal(x_nether, z_nether)"> Convert to Real</button>
+				</div>
+			</form>
+		</div>
+	</body> 
+</html> 
